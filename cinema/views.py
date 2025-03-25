@@ -126,7 +126,7 @@ class TicketViewSet(viewsets.ModelViewSet):
     queryset = Ticket.objects.all()
 
     def get_serializer_class(self):
-        if self.action == "list":
+        if self.action == ("list", "retrieve"):
             return TicketSerializer
         return TicketCreateUpdateSerializer
 
